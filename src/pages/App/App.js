@@ -1,9 +1,26 @@
+import { useState } from 'react';
 import './App.css';
+import AuthPage from '../AuthPage/AuthPage';
+import NewOrderPage from '../NewOrderPage/NewOrderPage';
+import OrderHistoryPage from '../OrderHistoryPage/OrderHistoryPage';
+import { Route, Routes } from 'react-router-dom';
+import NavBar from '../../components/NavBar/NavBar';
 
 function App() {
+  const [user, setUser] = useState(null);
   return (
     <main className="App">
-      App
+      { user ? 
+      <>
+        <NavBar />
+        <Routes>
+          {/* Route components here */}
+          <Route path='/orders/new' element={<NewOrderPage />} />
+          <Route path='/orders' element={<OrderHistoryPage />} />
+        </Routes> 
+      </>
+      : <AuthPage /> 
+      }
     </main>
   );
 }
