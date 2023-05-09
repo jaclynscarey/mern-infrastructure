@@ -1,5 +1,5 @@
 import { Component } from "react";
-import {signUp} from '../../../utilities/users-service';
+import { signUp } from '../../utilities/users-service';
 
 /*
 1) Create phase - when the component first mounts to the DOM
@@ -18,17 +18,19 @@ export default class SignUpForm extends Component {
 
   handleChange =  (evt) => {
     this.setState({
-      [evt.target.name]: evt.target.value
+      [evt.target.name]: evt.target.value,
+      error:'',
     })
   };
 
+  // define the handleSubmit event handler method here per the instructions provided
   handleSubmit = async (evt) => {
     evt.preventDefault();
     try {
       const formData = {...this.state};
       delete formData.error;
       delete formData.confirm;
-      const user = await SignUp(formData);
+      const user = await signUp(formData);
       console.log(user)
     } catch {
       this.setState({error: 'Sign Up Failed - Try Again'});

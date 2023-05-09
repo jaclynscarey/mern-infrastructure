@@ -22,6 +22,7 @@ app.use(express.static(path.join(__dirname, 'build')));
 
 // mount routes
 // API routes go here
+app.use('/api/users', require('./routes/api/users'));
 // "catch all route" - used to always servce index.html
 app.get('/*', (req, res) => {
     res.sendFile(path.join(__dirname, 'build', 'index.html'));
