@@ -14,7 +14,7 @@ export default function AuthPage({ setUser }) {
             <div className="left">
               <div className="logo">
                 <button onClick={() => setUserStatus(!userStatus)}>
-                  SEI Cafe
+                  Jacky's Cafe
                 </button>
               </div>
               <h3>Sign Up</h3>
@@ -26,7 +26,7 @@ export default function AuthPage({ setUser }) {
             <div className="left">
               <div className="logo">
                 <button onClick={() => setUserStatus(!userStatus)}>
-                  SEI Cafe
+                  Jacky's Cafe
                 </button>
               </div>
               <h3>Already a User?</h3>
